@@ -1,5 +1,6 @@
 import Process from '../components/Process';
 import Services from '../components/Services';
+import { motion } from 'framer-motion';
 
 const AboutPage = () => {
   const exhibitions = [
@@ -12,16 +13,31 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      <div className="py-20 bg-gray-50">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="py-20 bg-gray-50"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-center mb-16"
+          >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About the Artist</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Two decades of dedication to the ancient art of sculpture
             </p>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"
+          >
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Biography</h2>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
@@ -43,49 +59,66 @@ const AboutPage = () => {
             </div>
             
             <div>
-              <div className="rounded-lg overflow-hidden shadow-xl">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="rounded-lg overflow-hidden shadow-xl"
+              >
                 <img
                   src="https://images.pexels.com/photos/4350236/pexels-photo-4350236.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Artist at work"
                   className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
           
-          <div className="mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="mb-20"
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Artistic Philosophy</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-4xl mb-4">🏛️</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Tradition Meets Innovation</h3>
-                <p className="text-gray-600">
-                  Honoring time-tested techniques while embracing modern innovation
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-4xl mb-4">🌿</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Nature's Influence</h3>
-                <p className="text-gray-600">
-                  Drawing inspiration from the organic forms and textures of the natural world
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-4xl mb-4">❤️</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Emotional Connection</h3>
-                <p className="text-gray-600">
-                  Creating pieces that resonate deeply with those who experience them
-                </p>
-              </div>
+              {[
+                { icon: '🏛️', title: 'Tradition Meets Innovation', desc: 'Honoring time-tested techniques while embracing modern innovation' },
+                { icon: '🌿', title: "Nature's Influence", desc: 'Drawing inspiration from the organic forms and textures of the natural world' },
+                { icon: '❤️', title: 'Emotional Connection', desc: 'Creating pieces that resonate deeply with those who experience them' },
+              ].map((philosophy, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 + (index * 0.1), duration: 0.5 }}
+                  whileHover={{ y: -10 }}
+                  className="bg-white p-6 rounded-lg shadow-md text-center"
+                >
+                  <div className="text-4xl mb-4">{philosophy.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{philosophy.title}</h3>
+                  <p className="text-gray-600">
+                    {philosophy.desc}
+                  </p>
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
           
-          <div className="mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="mb-20"
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Materials & Techniques</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-lg shadow-md">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.0, duration: 0.5 }}
+                className="bg-white p-8 rounded-lg shadow-md"
+              >
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Marble Mastery</h3>
                 <p className="text-gray-600 mb-4">
                   Working with premium Carrara and Calacatta marble, I employ traditional carving techniques 
@@ -96,9 +129,14 @@ const AboutPage = () => {
                   <li>Surface finishing techniques for various textures</li>
                   <li>Polishing to achieve desired luminosity</li>
                 </ul>
-              </div>
+              </motion.div>
               
-              <div className="bg-white p-8 rounded-lg shadow-md">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1, duration: 0.5 }}
+                className="bg-white p-8 rounded-lg shadow-md"
+              >
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Bronze Casting</h3>
                 <p className="text-gray-600 mb-4">
                   Utilizing the ancient lost-wax casting method to create durable, detailed bronze sculptures.
@@ -108,13 +146,22 @@ const AboutPage = () => {
                   <li>Wax casting and ceramic shell formation</li>
                   <li>Patinas application for distinctive finishes</li>
                 </ul>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
           
-          <div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.0, duration: 0.6 }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Exhibitions & Awards</h2>
-            <div className="overflow-x-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="overflow-x-auto"
+            >
               <table className="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
                 <thead className="bg-gray-900 text-white">
                   <tr>
@@ -125,18 +172,24 @@ const AboutPage = () => {
                 </thead>
                 <tbody>
                   {exhibitions.map((exhibition, index) => (
-                    <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                    <motion.tr 
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1.4 + (index * 0.1), duration: 0.3 }}
+                      className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
+                    >
                       <td className="py-3 px-6">{exhibition.year}</td>
                       <td className="py-3 px-6 font-medium">{exhibition.title}</td>
                       <td className="py-3 px-6">{exhibition.venue}</td>
-                    </tr>
+                    </motion.tr>
                   ))}
                 </tbody>
               </table>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
       
       <Process />
       <Services />

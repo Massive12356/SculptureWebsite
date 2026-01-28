@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -79,7 +80,14 @@ const Hero = () => {
       ))}
       
       {/* Slide Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <motion.div 
+        key={currentSlide}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
           {slides[currentSlide].title}
           <br />
@@ -88,13 +96,15 @@ const Hero = () => {
         <p className="text-lg sm:text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
           {slides[currentSlide].description}
         </p>
-        <button
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={goToGallery}
-          className="bg-white text-gray-900 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+          className="bg-white text-gray-900 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform transition-all duration-200"
         >
           {slides[currentSlide].buttonText}
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
       
       {/* Slider Controls - Bottom Right */}
       <div className="absolute bottom-8 right-8 z-20 flex flex-col items-end space-y-4">
