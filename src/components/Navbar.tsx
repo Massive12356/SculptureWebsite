@@ -1,66 +1,54 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => {
-    return location.pathname === path;
+    if (path === '/') return location.pathname === '/';
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
   };
+
+  const links = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About' },
+    { to: '/gallery', label: 'Gallery' },
+    { to: '/services', label: 'Services' },
+    { to: '/blog', label: 'Journal' },
+    { to: '/csr', label: 'CSR' },
+    { to: '/contact', label: 'Contact' },
+  ];
 
   return (
     <nav className="fixed w-full bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gray-900">Sculptor Studio</h1>
+            <Link to="/" className="text-2xl font-bold text-gray-900">Sculptor Studio</Link>
           </div>
 
-          <div className="hidden md:flex space-x-8">
-            <Link
-              to="/"
-              className={`transition-colors ${isActive('/') ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className={`transition-colors ${isActive('/about') ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              About
-            </Link>
-            <Link
-              to="/gallery"
-              className={`transition-colors ${isActive('/gallery') ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              Gallery
-            </Link>
-            <Link
-              to="/services"
-              className={`transition-colors ${isActive('/services') ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              Services
-            </Link>
-            <Link
-              to="/blog"
-              className={`transition-colors ${isActive('/blog') ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              Journal
-            </Link>
-            <Link
-              to="/contact"
-              className={`transition-colors ${isActive('/contact') ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
-            >
-              Contact
-            </Link>
+          <div className="hidden lg:flex space-x-6 xl:space-x-8">
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`transition-colors ${isActive(link.to) ? 'text-gray-900 font-medium' : 'text-gray-700 hover:text-gray-900'}`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 hover:text-gray-900"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -68,54 +56,39 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${isActive('/') ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'}`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/gallery"
-              onClick={() => setIsOpen(false)}
-              className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${isActive('/gallery') ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'}`}
-            >
-              Gallery
-            </Link>
-            <Link
-              to="/services"
-              onClick={() => setIsOpen(false)}
-              className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${isActive('/services') ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'}`}
-            >
-              Services
-            </Link>
-            <Link
-              to="/blog"
-              onClick={() => setIsOpen(false)}
-              className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${isActive('/blog') ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'}`}
-            >
-              Journal
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsOpen(false)}
-              className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${isActive('/about') ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'}`}
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${isActive('/contact') ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'}`}
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:hidden overflow-hidden bg-white border-t border-gray-200"
+          >
+            <div className="px-6 py-4 flex flex-col items-center gap-1">
+              {links.map((link, index) => (
+                <motion.div
+                  key={link.to}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.25, delay: 0.04 * index }}
+                  className="w-full max-w-xs"
+                >
+                  <Link
+                    to={link.to}
+                    onClick={() => setIsOpen(false)}
+                    className={`block w-full text-center px-3 py-2.5 rounded-md transition-colors ${isActive(link.to) ? 'bg-gray-100 text-gray-900 font-medium' : 'text-gray-700 hover:bg-gray-50'}`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

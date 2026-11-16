@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import Process from '../components/Process';
 import Services from '../components/Services';
 import { motion } from 'framer-motion';
+import { team, milestones } from '../data/mockData';
 
 const AboutPage = () => {
   const exhibitions = [
@@ -12,7 +14,7 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -26,9 +28,9 @@ const AboutPage = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About the Artist</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About the Studio</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Two decades of dedication to the ancient art of sculpture
+              A New York atelier, open since 2004, led by Elena Marlowe and a small team of carvers, founders, and installers.
             </p>
           </motion.div>
           
@@ -39,21 +41,16 @@ const AboutPage = () => {
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"
           >
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Biography</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">The atelier</h2>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                 <p>
-                  For over two decades, I have dedicated my life to the ancient art of sculpture,
-                  transforming raw materials into expressions of beauty, emotion, and timeless form.
+                  Sculptor Studio sits on Artisan Lane in the Creative District. Elena Marlowe opened it in 2004 after years at a classical carving bench. The practice is still led from that bench: she draws every commission and finishes every surface.
                 </p>
                 <p>
-                  My work is inspired by the natural world, human emotion, and the interplay of light
-                  and shadow. Each piece begins as a vision—a moment of inspiration that demands to be
-                  brought into physical reality through patience, skill, and unwavering dedication.
+                  Around her is a team that takes a piece from the first clay model to the site where it will live. Luca blocks the stone. Amara runs the wax room and the patina. Noah engineers the large works and installs them. James keeps the schedule honest. Priya holds the door open for the neighborhood.
                 </p>
                 <p>
-                  Working primarily with marble, bronze, and wood, I embrace both traditional techniques
-                  passed down through generations and contemporary approaches that push the boundaries
-                  of what sculpture can be.
+                  The work is marble, bronze, wood, and steel — traditional methods, used for rooms and public places that need a form to last. The studio also keeps a public promise: material reused where it can be, apprentices paid, and one civic work a year for a place that could not otherwise commission it.
                 </p>
               </div>
             </div>
@@ -66,11 +63,61 @@ const AboutPage = () => {
                 className="rounded-lg overflow-hidden shadow-xl"
               >
                 <img
-                  src="https://images.pexels.com/photos/4350236/pexels-photo-4350236.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Artist at work"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="mb-20"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">The team</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Six people. Most days you will find all of them in the studio or the yard behind it.
+              </p>
+            </div>
+
+            {team.filter((member) => member.lead).map((member) => (
+              <div key={member.id} className="bg-white rounded-lg shadow-md overflow-hidden mb-8 grid grid-cols-1 md:grid-cols-5">
+                <div className="md:col-span-2 h-72 md:h-full">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                </div>
+                <div className="md:col-span-3 p-8 md:p-10 flex flex-col justify-center">
+                  <p className="text-sm uppercase tracking-wider text-gray-500 mb-2">{member.role}</p>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3">{member.name}</h3>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-4">{member.bio}</p>
+                  <p className="text-sm font-medium text-gray-900">Focus · {member.focus}</p>
+                </div>
+              </div>
+            ))}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {team.filter((member) => !member.lead).map((member, index) => (
+                <motion.article
+                  key={member.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index, duration: 0.45 }}
+                  className="bg-white rounded-lg shadow-md overflow-hidden"
+                >
+                  <div className="h-64 overflow-hidden">
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-6">
+                    <p className="text-sm font-medium text-gray-500 mb-1">{member.role}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">{member.bio}</p>
+                    <p className="text-sm text-gray-800">{member.focus}</p>
+                  </div>
+                </motion.article>
+              ))}
             </div>
           </motion.div>
           
@@ -121,8 +168,8 @@ const AboutPage = () => {
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Marble Mastery</h3>
                 <p className="text-gray-600 mb-4">
-                  Working with premium Carrara and Calacatta marble, I employ traditional carving techniques 
-                  passed down through generations of master sculptors.
+                  Working with Carrara and Calacatta marble, the studio uses carving techniques 
+                  passed down through generations of stone carvers, with Luca leading the bench.
                 </p>
                 <ul className="list-disc pl-5 text-gray-600 space-y-1">
                   <li>Precision hand-carving with traditional tools</li>
@@ -149,13 +196,31 @@ const AboutPage = () => {
               </motion.div>
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="mb-20"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Studio timeline</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {milestones.map((milestone) => (
+                <div key={milestone.year} className="bg-white p-6 rounded-lg shadow-md">
+                  <p className="text-sm font-bold tracking-wider text-gray-500 mb-2">{milestone.year}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Exhibitions & Awards</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Exhibitions</h2>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -187,6 +252,12 @@ const AboutPage = () => {
                 </tbody>
               </table>
             </motion.div>
+            <p className="text-center text-gray-600 mt-8">
+              The studio also keeps a public commitment beyond the exhibition list.{' '}
+              <Link to="/csr" className="font-medium text-gray-900 underline underline-offset-4 hover:text-gray-600">
+                Read about our community and material stewardship.
+              </Link>
+            </p>
           </motion.div>
         </div>
       </motion.div>

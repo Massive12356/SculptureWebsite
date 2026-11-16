@@ -33,7 +33,7 @@ const About = () => {
           <div className="order-1 lg:order-2">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img
-                src="https://images.pexels.com/photos/4350236/pexels-photo-4350236.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Artist at work"
                 className="w-full h-full object-cover"
               />

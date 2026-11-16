@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { sculptures } from '../data/mockData';
 
 const SculptureDetailPage = () => {
@@ -61,12 +61,18 @@ const SculptureDetailPage = () => {
             </p>
             
             <div className="space-y-4">
-              <button className="w-full bg-gray-900 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200">
+              <Link
+                to={`/contact?inquiry=Gallery%20work&subject=${encodeURIComponent(`Inquiry: ${sculpture.title}`)}`}
+                className="block text-center w-full bg-gray-900 text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-800 transition-colors shadow-lg"
+              >
                 Inquire About This Piece
-              </button>
-              <button className="w-full bg-white border border-gray-300 text-gray-900 px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-50 transition-colors">
+              </Link>
+              <Link
+                to={`/contact?inquiry=Commission&subject=${encodeURIComponent(`A work like ${sculpture.title}`)}`}
+                className="block text-center w-full bg-white border border-gray-300 text-gray-900 px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-50 transition-colors"
+              >
                 Request Similar Work
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -78,7 +84,7 @@ const SculptureDetailPage = () => {
               .filter(s => s.id !== sculpture.id)
               .slice(0, 3)
               .map(s => (
-                <div key={s.id} className="group">
+                <Link key={s.id} to={`/gallery/${s.id}`} className="group">
                   <div className="rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
                     <img
                       src={s.images[0]}
@@ -90,7 +96,7 @@ const SculptureDetailPage = () => {
                     <h3 className="text-xl font-bold text-gray-900">{s.title}</h3>
                     <p className="text-gray-600">{s.material} • {s.year}</p>
                   </div>
-                </div>
+                </Link>
               ))
             }
           </div>

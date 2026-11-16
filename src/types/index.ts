@@ -23,6 +23,7 @@ export interface Service {
   title: string;
   description: string;
   icon: string;
+  highlights: string[];
 }
 
 export interface BlogPost {
@@ -33,4 +34,36 @@ export interface BlogPost {
   category: string;
   readTime: string;
   image: string;
+  author: string;
+}
+
+export interface TeamMember {
+  id: number;
+  name: string;
+  role: string;
+  focus: string;
+  bio: string;
+  image: string;
+  lead?: boolean;
+}
+
+export interface Milestone {
+  year: string;
+  title: string;
+  description: string;
+}
+
+export interface CsrProgram {
+  id: number;
+  title: string;
+  summary: string;
+  description: string;
+  impact: string;
+  image: string;
+}
+
+export interface Faq {
+  id: number;
+  question: string;
+  answer: string;
 }

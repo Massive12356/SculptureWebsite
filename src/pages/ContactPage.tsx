@@ -1,24 +1,40 @@
 import { useState, FormEvent } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import { motion } from 'framer-motion';
 
+const inquiries = [
+  'Commission',
+  'Gallery work',
+  'Restoration',
+  'Studio visit',
+  'CSR & partnerships',
+  'Press',
+  'Something else',
+];
+
 const ContactPage = () => {
+  const [searchParams] = useSearchParams();
+  const [sent, setSent] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    inquiry: searchParams.get('inquiry') || 'Commission',
+    subject: searchParams.get('subject') || '',
     message: '',
+    consent: false,
   });
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your message! This is a demo form.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    if (!formData.consent) return;
+    setSent(true);
+    setFormData({ name: '', email: '', inquiry: 'Commission', subject: '', message: '', consent: false });
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -34,7 +50,7 @@ const ContactPage = () => {
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Interested in commissioning a piece or learning more about my work? I'd love to hear from you.
+              Commissions, gallery works, restoration, a studio visit, or a community partnership. Write to the studio and James or Priya will answer.
             </p>
           </motion.div>
           
@@ -52,6 +68,11 @@ const ContactPage = () => {
                 onSubmit={handleSubmit} 
                 className="space-y-6"
               >
+                {sent && (
+                  <div className="rounded-md bg-gray-900 text-white px-4 py-3">
+                    Message received. This is a demonstration studio, so nothing was sent — in the real atelier, you would hear back within two working days.
+                  </div>
+                )}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                     Name
@@ -83,6 +104,22 @@ const ContactPage = () => {
                 </div>
                 
                 <div>
+                  <label htmlFor="inquiry" className="block text-sm font-medium text-gray-700 mb-2">
+                    What is this about?
+                  </label>
+                  <select
+                    id="inquiry"
+                    value={formData.inquiry}
+                    onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all outline-none bg-white"
+                  >
+                    {inquiries.map((item) => (
+                      <option key={item} value={item}>{item}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     Subject
                   </label>
@@ -108,9 +145,25 @@ const ContactPage = () => {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all outline-none resize-none"
-                    placeholder="Tell me about your project or inquiry..."
+                    placeholder="The space, the material you have in mind, and when you hope to have the work."
                   />
                 </div>
+
+                <label className="flex items-start gap-3 text-sm text-gray-600">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={formData.consent}
+                    onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                    className="mt-1 h-4 w-4"
+                  />
+                  <span>
+                    I agree to the studio contacting me about this inquiry, and I have read the{' '}
+                    <Link to="/privacy" className="text-gray-900 underline underline-offset-4">Privacy Policy</Link>
+                    {' '}and{' '}
+                    <Link to="/terms" className="text-gray-900 underline underline-offset-4">Terms of Service</Link>.
+                  </span>
+                </label>
 
                 <motion.button
                   whileHover={{ scale: 1.02 }}

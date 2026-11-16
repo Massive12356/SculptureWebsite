@@ -1,26 +1,7 @@
+import { services as allServices } from '../data/mockData';
+
 const Services = () => {
-  const services = [
-    {
-      title: "Custom Sculptures",
-      description: "Bespoke artistic creations tailored to your vision and space requirements.",
-      icon: "🎨"
-    },
-    {
-      title: "Restoration Work",
-      description: "Expert restoration of antique and damaged sculptures to their former glory.",
-      icon: "🔨"
-    },
-    {
-      title: "Commission Pieces",
-      description: "Collaborative process to create unique artworks for individuals and institutions.",
-      icon: "🤝"
-    },
-    {
-      title: "Workshop Tours",
-      description: "Experience the creative process firsthand with guided tours of the studio.",
-      icon: "🏛️"
-    }
-  ];
+  const services = [allServices[0], allServices[3], allServices[2], allServices[4]];
 
   return (
     <section className="py-20 bg-gray-50">

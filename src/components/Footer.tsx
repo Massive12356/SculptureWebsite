@@ -1,12 +1,27 @@
+import { FormEvent, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [agreed, setAgreed] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (event: FormEvent) => {
+    event.preventDefault();
+    if (!email.trim() || !agreed) return;
+    setSubscribed(true);
+    setEmail('');
+    setAgreed(false);
+  };
+
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Journal', path: '/blog' },
+    { name: 'CSR', path: '/csr' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -58,12 +73,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.path}
+                  <Link
+                    to={link.path}
                     className="text-gray-400 hover:text-white transition-colors duration-300"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -88,16 +103,38 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Subscribe to our newsletter for the latest works and studio updates.
             </p>
-            <div className="flex flex-col space-y-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 w-full"
-              />
-              <button className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition-colors duration-300 text-sm font-medium">
-                Subscribe
-              </button>
-            </div>
+            {subscribed ? (
+              <p className="text-gray-200 text-sm">
+                You are on the list. Studio notes go out a few times a year — this demo does not send mail.
+              </p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex flex-col space-y-3">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="Your email address"
+                  className="px-4 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 w-full"
+                />
+                <label className="flex items-start gap-2 text-sm text-gray-400">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={agreed}
+                    onChange={(event) => setAgreed(event.target.checked)}
+                    className="mt-1"
+                  />
+                  <span>
+                    I agree to receive occasional studio notes, as described in the{' '}
+                    <Link to="/privacy" className="text-gray-200 underline underline-offset-4">Privacy Policy</Link>.
+                  </span>
+                </label>
+                <button className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition-colors duration-300 text-sm font-medium">
+                  Subscribe
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>
@@ -109,13 +146,16 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} Sculptor Studio. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
+              <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+              </Link>
+              <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
                 Terms of Service
-              </a>
+              </Link>
+              <Link to="/consent" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+                Consent
+              </Link>
             </div>
           </div>
         </div>

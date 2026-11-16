@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -50,19 +51,18 @@ const Hero = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
   
-  // Auto-advance slides
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide();
-    }, 5000); // Change slide every 5 seconds
-    
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 6000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [currentSlide, slides.length]);
 
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center pt-16 overflow-hidden"
+      className="relative h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden pb-16"
     >
       {/* Slides */}
       {slides.map((slide, index) => (
@@ -86,7 +86,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="relative z-10 max-w-7xl mx-auto px-16 sm:px-24 text-center"
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
           {slides[currentSlide].title}
@@ -106,45 +106,40 @@ const Hero = () => {
         </motion.button>
       </motion.div>
       
-      {/* Slider Controls - Bottom Right */}
-      <div className="absolute bottom-8 right-8 z-20 flex flex-col items-end space-y-4">
-        {/* Navigation Arrows */}
-        <div className="flex space-x-2">
-          <button 
-            onClick={prevSlide}
-            className="w-10 h-10 rounded-full bg-white bg-opacity-80 text-gray-800 flex items-center justify-center hover:bg-opacity-100 transition-all duration-300 shadow-lg"
-            aria-label="Previous slide"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="w-10 h-10 rounded-full bg-white bg-opacity-80 text-gray-800 flex items-center justify-center hover:bg-opacity-100 transition-all duration-300 shadow-lg"
-            aria-label="Next slide"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-        
-        {/* Slide Indicators */}
-        <div className="flex space-x-2">
-          {slides.map((_, index) => (
+      <button
+        type="button"
+        onClick={prevSlide}
+        className="absolute left-3 sm:left-6 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/30 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-gray-900 sm:h-14 sm:w-14"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.75} />
+      </button>
+      <button
+        type="button"
+        onClick={nextSlide}
+        className="absolute right-3 sm:right-6 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/30 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-gray-900 sm:h-14 sm:w-14"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1.75} />
+      </button>
+
+      <div className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 items-center gap-4 text-white">
+        <span className="text-xs tracking-[0.25em] tabular-nums">0{currentSlide + 1}</span>
+        <div className="flex items-center gap-2">
+          {slides.map((slide, index) => (
             <button
-              key={index}
+              key={slide.id}
+              type="button"
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide 
-                  ? 'bg-white w-6' 
-                  : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+              className={`h-0.5 rounded-full transition-all duration-500 ${
+                index === currentSlide ? 'w-10 bg-white' : 'w-5 bg-white/40 hover:bg-white/70'
               }`}
               aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === currentSlide ? 'true' : undefined}
             />
           ))}
         </div>
+        <span className="text-xs tracking-[0.25em] text-white/60 tabular-nums">0{slides.length}</span>
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ const GalleryPage = () => {
   }, [selectedMaterial, selectedCategory]);
   
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -80,7 +80,27 @@ const GalleryPage = () => {
               </select>
             </div>
           </motion.div>
+
+          <p className="text-center text-sm text-gray-500 mb-8">
+            {filteredSculptures.length} {filteredSculptures.length === 1 ? 'work' : 'works'}
+          </p>
           
+          {filteredSculptures.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-xl text-gray-900 font-medium mb-2">Nothing in this combination</p>
+              <p className="text-gray-600 mb-6">Try another material or category, or view the full collection.</p>
+              <button
+                onClick={() => {
+                  setSelectedMaterial('All');
+                  setSelectedCategory('All');
+                }}
+                className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors"
+              >
+                Clear filters
+              </button>
+            </div>
+          ) : null}
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,12 +120,17 @@ const GalleryPage = () => {
                   <div 
                     className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
                   >
-                    <div className="aspect-square overflow-hidden">
+                    <div className="aspect-square overflow-hidden relative">
                       <img
                         src={sculpture.images[0]}
                         alt={sculpture.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
+                      {sculpture.availability && (
+                        <span className="absolute top-3 left-3 bg-white/95 text-gray-900 text-xs font-medium px-2.5 py-1 rounded-full">
+                          {sculpture.availability}
+                        </span>
+                      )}
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
