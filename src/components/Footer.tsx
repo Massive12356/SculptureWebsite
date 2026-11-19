@@ -40,7 +40,7 @@ const Footer = () => {
               <img
                 src="https://res.cloudinary.com/cmpwim01/image/upload/v1795098791/Sculptmoore_Golden_Sculptural_Emblem-removebg-preview.png"
                 alt="SCULPTMOORE"
-                className="h-12 w-auto"
+                className="h-16 w-auto sm:h-20"
               />
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">

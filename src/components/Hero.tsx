@@ -71,7 +71,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-gray-950"
+      className="relative flex h-[calc(100vh-5rem)] items-center justify-center overflow-hidden bg-gray-950"
     >
       {slides.map((slide, index) => (
         <div
