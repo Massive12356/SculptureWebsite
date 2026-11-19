@@ -17,8 +17,6 @@ const Navbar = () => {
     { to: '/about', label: 'About' },
     { to: '/gallery', label: 'Gallery' },
     { to: '/services', label: 'Services' },
-    { to: '/blog', label: 'Journal' },
-    { to: '/csr', label: 'CSR' },
     { to: '/contact', label: 'Contact' },
   ];
 
@@ -27,7 +25,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-gray-900">Sculptor Studio</Link>
+            <Link to="/" className="text-2xl font-bold text-gray-900">SCULPTMOORE</Link>
           </div>
 
           <div className="hidden lg:flex space-x-6 xl:space-x-8">

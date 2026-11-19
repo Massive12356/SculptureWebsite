@@ -20,15 +20,13 @@ const Footer = () => {
     { name: 'Gallery', path: '/gallery' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Journal', path: '/blog' },
-    { name: 'CSR', path: '/csr' },
     { name: 'Contact', path: '/contact' },
   ];
 
   const contactInfo = [
     { icon: <MapPin size={18} />, text: '123 Artisan Lane, Creative District, New York, NY 10001' },
     { icon: <Phone size={18} />, text: '(555) 123-4567' },
-    { icon: <Mail size={18} />, text: 'studio@sculptor.com' },
+    { icon: <Mail size={18} />, text: 'studio@sculptmoore.com' },
     { icon: <Clock size={18} />, text: 'Mon-Fri: 9AM-6PM, Sat: 10AM-4PM' },
   ];
 
@@ -38,7 +36,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Studio Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-gray-100">Sculptor Studio</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-100">SCULPTMOORE</h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Creating timeless sculptures that capture the essence of beauty, emotion, and enduring artistry.
             </p>
@@ -144,7 +142,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Sculptor Studio. All rights reserved.
+              &copy; {new Date().getFullYear()} SCULPTMOORE. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4 md:mt-0">
               <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">

@@ -21,11 +21,11 @@ const SculptureDetailPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <div className="rounded-lg overflow-hidden shadow-xl">
+            <div className="rounded-lg overflow-hidden shadow-xl bg-gray-100">
               <img
                 src={sculpture.images[0]}
                 alt={sculpture.title}
-                className="w-full h-full object-cover"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -89,7 +89,7 @@ const SculptureDetailPage = () => {
                     <img
                       src={s.images[0]}
                       alt={s.title}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-auto block"
                     />
                   </div>
                   <div className="mt-4">

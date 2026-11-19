@@ -28,9 +28,9 @@ const AboutPage = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About the Studio</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About SCULPTMOORE</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A New York atelier, open since 2004, led by Elena Marlowe and a small team of carvers, founders, and installers.
+              A New York atelier, open since 2004, led by Diana Moore with a studio director, a master carver, and an intern beside her.
             </p>
           </motion.div>
           
@@ -44,10 +44,10 @@ const AboutPage = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">The atelier</h2>
               <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                 <p>
-                  Sculptor Studio sits on Artisan Lane in the Creative District. Elena Marlowe opened it in 2004 after years at a classical carving bench. The practice is still led from that bench: she draws every commission and finishes every surface.
+                  SCULPTMOORE sits on Artisan Lane in the Creative District. Diana Moore opened it in 2004 after years at a classical carving bench. The practice is still led from that bench: she draws every commission and finishes every surface.
                 </p>
                 <p>
-                  Around her is a team that takes a piece from the first clay model to the site where it will live. Luca blocks the stone. Amara runs the wax room and the patina. Noah engineers the large works and installs them. James keeps the schedule honest. Priya holds the door open for the neighborhood.
+                  Beside her, James keeps the schedule and the clients honest, Luca blocks the stone, and Maya supports the bench as the studio intern — preparing materials, documenting the work, and learning the craft from the first clay model to the finished surface.
                 </p>
                 <p>
                   The work is marble, bronze, wood, and steel — traditional methods, used for rooms and public places that need a form to last. The studio also keeps a public promise: material reused where it can be, apprentices paid, and one civic work a year for a place that could not otherwise commission it.
@@ -63,9 +63,9 @@ const AboutPage = () => {
                 className="rounded-lg overflow-hidden shadow-xl"
               >
                 <img
-                  src="https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Artist at work"
-                  className="w-full h-full object-cover"
+                  src="https://res.cloudinary.com/cmpwim01/image/upload/v1795085858/IMG_6173.jpg"
+                  alt="The atelier"
+                  className="w-full h-auto"
                 />
               </motion.div>
             </div>
@@ -80,7 +80,7 @@ const AboutPage = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">The team</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Six people. Most days you will find all of them in the studio or the yard behind it.
+                Four people. Most days you will find all of them in the studio or the yard behind it.
               </p>
             </div>
 
@@ -169,7 +169,7 @@ const AboutPage = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Marble Mastery</h3>
                 <p className="text-gray-600 mb-4">
                   Working with Carrara and Calacatta marble, the studio uses carving techniques 
-                  passed down through generations of stone carvers, with Luca leading the bench.
+                  passed down through generations of stone carvers, with Diana leading the bench.
                 </p>
                 <ul className="list-disc pl-5 text-gray-600 space-y-1">
                   <li>Precision hand-carving with traditional tools</li>
@@ -254,8 +254,8 @@ const AboutPage = () => {
             </motion.div>
             <p className="text-center text-gray-600 mt-8">
               The studio also keeps a public commitment beyond the exhibition list.{' '}
-              <Link to="/csr" className="font-medium text-gray-900 underline underline-offset-4 hover:text-gray-600">
-                Read about our community and material stewardship.
+              <Link to="/contact" className="font-medium text-gray-900 underline underline-offset-4 hover:text-gray-600">
+                Ask about community and material stewardship.
               </Link>
             </p>
           </motion.div>

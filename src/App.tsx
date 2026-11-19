@@ -7,8 +7,9 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import SculptureDetailPage from './pages/SculptureDetailPage';
 import ServicesPage from './pages/ServicesPage';
-import BlogPage from './pages/BlogPage';
-import CsrPage from './pages/CsrPage';
+// Journal and CSR pages are kept but hidden for now
+// import BlogPage from './pages/BlogPage';
+// import CsrPage from './pages/CsrPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 import ConsentPage from './pages/ConsentPage';
@@ -42,8 +43,8 @@ function AnimatedRoutes() {
           <Route path="/gallery/:id" element={<SculptureDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/csr" element={<CsrPage />} />
+          {/* <Route path="/blog" element={<BlogPage />} /> */}
+          {/* <Route path="/csr" element={<CsrPage />} /> */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />

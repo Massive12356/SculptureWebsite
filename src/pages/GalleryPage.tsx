@@ -120,11 +120,11 @@ const GalleryPage = () => {
                   <div 
                     className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
                   >
-                    <div className="aspect-square overflow-hidden relative">
+                    <div className="overflow-hidden relative">
                       <img
                         src={sculpture.images[0]}
                         alt={sculpture.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
                       />
                       {sculpture.availability && (
                         <span className="absolute top-3 left-3 bg-white/95 text-gray-900 text-xs font-medium px-2.5 py-1 rounded-full">

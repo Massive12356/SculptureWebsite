@@ -44,7 +44,7 @@ const CsrPage = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
           >
-            Sculptor Studio sets aside time, material, and money for the neighborhood, for students, and for the stone and metal we cut. This is that work, stated plainly.
+            SCULPTMOORE sets aside time, material, and money for the neighborhood, for students, and for the stone and metal we cut. This is that work, stated plainly.
           </motion.p>
         </div>
       </section>
@@ -73,7 +73,7 @@ const CsrPage = () => {
           <div className="mb-12 max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Programs</h2>
             <p className="text-lg text-gray-600">
-              Six commitments we fund from studio income. Priya Nair leads them. James Okonkwo puts them on the same schedule as client work, so they do not slip.
+              Six commitments we fund from studio income. Diana Moore leads them. James Okonkwo puts them on the same schedule as client work, so they do not slip.
             </p>
           </div>
 

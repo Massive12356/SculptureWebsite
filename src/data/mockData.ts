@@ -8,7 +8,7 @@ export const sculptures: Sculpture[] = [
     year: 2023,
     dimensions: '48" x 24" x 24"',
     description: 'A study in balance and grace, carved from a single block of Carrara marble. The figure leans into its own shadow, a quiet argument for the endurance of human connection. The surface is left partly raw so the quarry face remains visible beside the polished planes.',
-    images: ['https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=800'],
+    images: ['https://res.cloudinary.com/cmpwim01/image/upload/v1795085856/IMG_1865.jpg'],
     category: 'Abstract',
     availability: 'Available',
     price: '$12,500'
@@ -20,7 +20,7 @@ export const sculptures: Sculpture[] = [
     year: 2022,
     dimensions: '36" x 18" x 18"',
     description: 'Cast in bronze by the lost-wax method and finished with a warm brown patina. The figure is caught mid-rise, weight still on the back foot, made for a private courtyard where morning light crosses the torso.',
-    images: ['https://images.pexels.com/photos/6492399/pexels-photo-6492399.jpeg?auto=compress&cs=tinysrgb&w=800'],
+    images: ['https://res.cloudinary.com/cmpwim01/image/upload/v1795085849/IMG_1587.jpg'],
     category: 'Figurative',
     availability: 'Sold',
     price: '$8,200'
@@ -32,7 +32,7 @@ export const sculptures: Sculpture[] = [
     year: 2023,
     dimensions: '42" x 30" x 20"',
     description: 'Carved from one fallen white oak, following the grain rather than fighting it. The hollow at the center was already in the timber; the studio opened it just enough for light to pass through.',
-    images: ['https://images.pexels.com/photos/3004909/pexels-photo-3004909.jpeg?auto=compress&cs=tinysrgb&w=800'],
+    images: ['https://res.cloudinary.com/cmpwim01/image/upload/v1795085850/IMG_1621.jpg'],
     category: 'Abstract',
     availability: 'Available',
     price: '$6,500'
@@ -44,7 +44,7 @@ export const sculptures: Sculpture[] = [
     year: 2021,
     dimensions: '60" x 24" x 16"',
     description: 'Welded plate steel, ground and sealed, built as a study of how a heavy material can still read as drawing in space. The edges are left crisp so the piece changes outline as you walk around it.',
-    images: ['https://images.pexels.com/photos/6966564/pexels-photo-6966564.jpeg?auto=compress&cs=tinysrgb&w=800'],
+    images: ['https://res.cloudinary.com/cmpwim01/image/upload/v1795085845/IMG_1515.jpg'],
     category: 'Abstract',
     availability: 'Available',
     price: '$10,000'
@@ -56,7 +56,7 @@ export const sculptures: Sculpture[] = [
     year: 2022,
     dimensions: '52" x 28" x 22"',
     description: 'Limestone, worked with point and claw in the older way. The pose quotes archaic figures without copying them: a still face, a modern stance, and tool marks left as part of the surface.',
-    images: ['https://images.pexels.com/photos/3004905/pexels-photo-3004905.jpeg?auto=compress&cs=tinysrgb&w=800'],
+    images: ['https://res.cloudinary.com/cmpwim01/image/upload/v1795085836/IMG_1384.jpg'],
     category: 'Figurative',
     availability: 'Inquire',
     price: '$9,800'
@@ -68,34 +68,10 @@ export const sculptures: Sculpture[] = [
     year: 2023,
     dimensions: '40" x 20" x 20"',
     description: 'A contemporary reading of classical proportion, reduced until only the turn of a shoulder and the fall of a cloth remain. Polished Calacatta, meant to sit against a plain wall.',
-    images: ['https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&w=800'],
+    images: ['https://res.cloudinary.com/cmpwim01/image/upload/v1795085834/IMG_1271.jpg'],
     category: 'Abstract',
     availability: 'Available',
     price: '$11,000'
-  },
-  {
-    id: 7,
-    title: 'Monumental Presence',
-    material: 'Bronze',
-    year: 2021,
-    dimensions: '84" x 40" x 30"',
-    description: 'A civic bronze, modeled at full scale in the studio yard and cast in sections. Designed to be walked around, not looked at from a plinth: the base sits flush with the paving.',
-    images: ['https://images.pexels.com/photos/6492399/pexels-photo-6492399.jpeg?auto=compress&cs=tinysrgb&w=800'],
-    category: 'Monumental',
-    availability: 'Commissioned',
-    price: '$45,000'
-  },
-  {
-    id: 8,
-    title: 'Organic Flow',
-    material: 'Wood',
-    year: 2023,
-    dimensions: '36" x 28" x 18"',
-    description: 'Walnut, shaped so the grain runs the way water would. A smaller work, made to be handled as well as seen — the studio oils the surface once a year for collectors who want that kept up.',
-    images: ['https://images.pexels.com/photos/3004909/pexels-photo-3004909.jpeg?auto=compress&cs=tinysrgb&w=800'],
-    category: 'Abstract',
-    availability: 'Available',
-    price: '$5,800'
   }
 ];
 
@@ -186,7 +162,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Process',
     readTime: '8 min read',
     image: 'https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=800',
-    author: 'Elena Marlowe'
+    author: 'Diana Moore'
   },
   {
     id: 2,
@@ -196,7 +172,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Inspiration',
     readTime: '6 min read',
     image: 'https://images.pexels.com/photos/3004909/pexels-photo-3004909.jpeg?auto=compress&cs=tinysrgb&w=800',
-    author: 'Elena Marlowe'
+    author: 'Diana Moore'
   },
   {
     id: 3,
@@ -206,7 +182,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Studio Life',
     readTime: '7 min read',
     image: 'https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=800',
-    author: 'Luca Bianchi'
+    author: 'Maya Chen'
   },
   {
     id: 4,
@@ -226,7 +202,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Stewardship',
     readTime: '5 min read',
     image: 'https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800',
-    author: 'Priya Nair'
+    author: 'Diana Moore'
   },
   {
     id: 6,
@@ -236,18 +212,18 @@ export const blogPosts: BlogPost[] = [
     category: 'Commissions',
     readTime: '9 min read',
     image: 'https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&w=800',
-    author: 'Elena Marlowe'
+    author: 'Diana Moore'
   }
 ];
 
 export const team: TeamMember[] = [
   {
     id: 1,
-    name: 'Elena Marlowe',
+    name: 'Diana Moore',
     role: 'Founder & Principal Sculptor',
     focus: 'Concept, marble, final surface',
-    bio: 'Elena opened the studio in 2004 after years of classical carving. She still draws every commission and finishes every surface herself.',
-    image: 'https://images.pexels.com/photos/3772510/pexels-photo-3772510.jpeg?auto=compress&cs=tinysrgb&w=800',
+    bio: 'Diana opened the studio in 2004 after years of classical carving. She still draws every commission and finishes every surface herself.',
+    image: 'https://res.cloudinary.com/cmpwim01/image/upload/v1795085833/b9739bbe-e841-4e49-befd-e1d7f9616ff2.jpg',
     lead: true
   },
   {
@@ -263,31 +239,15 @@ export const team: TeamMember[] = [
     name: 'Luca Bianchi',
     role: 'Master Stone Carver',
     focus: 'Marble and limestone',
-    bio: 'Trained in Carrara, Luca handles the heavy blocking and teaches the apprentices how to read a block before the first cut.',
+    bio: 'Trained in Carrara, Luca handles the heavy blocking and finishes beside Diana. He also mentors Maya through the season at the bench.',
     image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=800'
   },
   {
     id: 4,
-    name: 'Amara Singh',
-    role: 'Lead Bronze Fabricator',
-    focus: 'Lost-wax casting and patina',
-    bio: 'Amara runs the wax room and the patina bench. She is the reason a bronze from this studio looks the same in year ten as it did on delivery day.',
-    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800'
-  },
-  {
-    id: 5,
-    name: 'Noah Ellis',
-    role: 'Public Art & Installation',
-    focus: 'Engineering and site work',
-    bio: 'Noah designs armatures, cranes the large works, and stays on site until a piece sits true. He leads every civic installation.',
-    image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=800'
-  },
-  {
-    id: 6,
-    name: 'Priya Nair',
-    role: 'Community & Education Lead',
-    focus: 'Workshops, apprentices, CSR',
-    bio: 'Priya runs the Saturday studios, the paid summer apprenticeships, and the partnerships with schools and neighborhood groups.',
+    name: 'Maya Chen',
+    role: 'Studio Intern',
+    focus: 'Studio support, clay prep, and documentation',
+    bio: 'Maya is the studio intern for this season. She assists Diana and Luca at the bench, prepares clay and tools, and photographs works in progress for the journal.',
     image: 'https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=800'
   }
 ];
@@ -296,7 +256,7 @@ export const milestones: Milestone[] = [
   {
     year: '2004',
     title: 'The studio opens',
-    description: 'Elena Marlowe takes a bench on Artisan Lane with a single block of marble and a short list of private clients.'
+    description: 'Diana Moore takes a bench on Artisan Lane with a single block of marble and a short list of private clients.'
   },
   {
     year: '2009',
@@ -311,7 +271,7 @@ export const milestones: Milestone[] = [
   {
     year: '2018',
     title: 'Apprenticeships begin',
-    description: 'The first paid summer apprentices join Luca and Amara. Nine have come through the program since.'
+    description: 'The first paid summer apprentices join Diana at the bench. Nine have come through the program since.'
   },
   {
     year: '2022',
@@ -338,7 +298,7 @@ export const csrPrograms: CsrProgram[] = [
     id: 2,
     title: 'Open Studio Saturdays',
     summary: 'The doors open once a month for anyone in the neighborhood.',
-    description: 'On the first Saturday of the month the studio is free to walk through. Priya and one carver host a short demonstration, and visitors can handle tools, stone samples, and works in progress. No ticket, no reservation for individuals.',
+    description: 'On the first Saturday of the month the studio is free to walk through. Diana and James host a short demonstration, and visitors can handle tools, stone samples, and works in progress. No ticket, no reservation for individuals.',
     impact: '140 neighbors and students through the doors last year',
     image: 'https://images.pexels.com/photos/3094215/pexels-photo-3094215.jpeg?auto=compress&cs=tinysrgb&w=1200'
   },
@@ -346,7 +306,7 @@ export const csrPrograms: CsrProgram[] = [
     id: 3,
     title: 'Paid apprenticeships',
     summary: 'A summer at the bench, with a wage, not an unpaid internship.',
-    description: 'Two apprentices each summer work beside Luca and Amara for twelve weeks. They are paid, insured, and finish with a small piece of their own and a written reference. Preference goes to students from public high schools and city colleges.',
+    description: 'Two apprentices each summer work beside Diana for twelve weeks. They are paid, insured, and finish with a small piece of their own and a written reference. Preference goes to students from public high schools and city colleges.',
     impact: '9 apprentices since 2018, 6 now working in the crafts',
     image: 'https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=1200'
   },
@@ -354,7 +314,7 @@ export const csrPrograms: CsrProgram[] = [
     id: 4,
     title: 'Civic gift program',
     summary: 'One public work a year for a place that could not otherwise commission it.',
-    description: 'Schools, libraries, and neighborhood parks can apply. The studio covers design and a share of fabrication. The partner covers the site, the foundation, and long-term care. Noah’s crew installs it.',
+    description: 'Schools, libraries, and neighborhood parks can apply. The studio covers design and a share of fabrication. The partner covers the site, the foundation, and long-term care. James coordinates the install with a trusted rigger.',
     impact: '6 gifted or subsidized works since the program began',
     image: 'https://images.pexels.com/photos/6492399/pexels-photo-6492399.jpeg?auto=compress&cs=tinysrgb&w=1200'
   },
@@ -395,7 +355,7 @@ export const faqs: Faq[] = [
   {
     id: 4,
     question: 'Do you deliver and install?',
-    answer: 'We crate, ship, and install within the region ourselves. Farther away, Noah’s team travels or we work with a rigger we already know. Installation is quoted with the commission, not added as a surprise.'
+    answer: 'We crate, ship, and install within the region ourselves. Farther away, we travel with a rigger we already know. Installation is quoted with the commission, not added as a surprise.'
   },
   {
     id: 5,

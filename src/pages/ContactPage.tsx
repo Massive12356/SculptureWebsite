@@ -9,7 +9,7 @@ const inquiries = [
   'Gallery work',
   'Restoration',
   'Studio visit',
-  'CSR & partnerships',
+  'Partnerships',
   'Press',
   'Something else',
 ];
@@ -50,7 +50,7 @@ const ContactPage = () => {
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Commissions, gallery works, restoration, a studio visit, or a community partnership. Write to the studio and James or Priya will answer.
+              Commissions, gallery works, restoration, a studio visit, or a community partnership. Write to the studio and James will answer.
             </p>
           </motion.div>
           
@@ -202,7 +202,7 @@ const ContactPage = () => {
                   
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Contact Info</h3>
-                    <p className="text-gray-600">Phone: (555) 123-4567<br />Email: studio@sculptor.com</p>
+                    <p className="text-gray-600">Phone: (555) 123-4567<br />Email: studio@sculptmoore.com</p>
                   </div>
                 </div>
               </motion.div>

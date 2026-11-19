@@ -7,7 +7,7 @@ const PrivacyPage = () => {
       <section>
         <h2>Who we are</h2>
         <p>
-          Sculptor Studio is the atelier at 123 Artisan Lane, Creative District, New York, NY 10001. When this policy says “the studio,” “we,” or “us,” it means that practice. Questions about your information go to <a href="mailto:studio@sculptor.com">studio@sculptor.com</a> or (555) 123-4567.
+          SCULPTMOORE is the atelier at 123 Artisan Lane, Creative District, New York, NY 10001. When this policy says “the studio,” “we,” or “us,” it means that practice. Questions about your information go to <a href="mailto:studio@sculptmoore.com">studio@sculptmoore.com</a> or (555) 123-4567.
         </p>
       </section>
 
@@ -45,7 +45,7 @@ const PrivacyPage = () => {
       <section>
         <h2>Who else sees it</h2>
         <p>
-          The studio staff who need it: James for commissions, Priya for visits and partnerships, and the maker assigned to the work. If a piece has to be cast or installed, the foundry or the rigging crew receives only what they need to do that job — dimensions, site notes, and a contact for delivery. We do not give your details to mailing lists, galleries we do not work with, or data brokers.
+          The studio staff who need it: James for commissions and visits, and Diana for the work itself. If a piece has to be cast or installed, the foundry or the rigging crew receives only what they need to do that job — dimensions, site notes, and a contact for delivery. We do not give your details to mailing lists, galleries we do not work with, or data brokers.
         </p>
       </section>
 
@@ -62,7 +62,7 @@ const PrivacyPage = () => {
       <section>
         <h2>Your choices</h2>
         <p>
-          You can ask us to correct a message, send you a copy of what we hold from you, or delete an inquiry that did not become a commission. Write to <a href="mailto:studio@sculptor.com">studio@sculptor.com</a> with the address you used. You can change cookies and studio-notes consent any time on the <Link to="/consent">consent page</Link>. Unsubscribing from a studio note stops the mail.
+          You can ask us to correct a message, send you a copy of what we hold from you, or delete an inquiry that did not become a commission. Write to <a href="mailto:studio@sculptmoore.com">studio@sculptmoore.com</a> with the address you used. You can change cookies and studio-notes consent any time on the <Link to="/consent">consent page</Link>. Unsubscribing from a studio note stops the mail.
         </p>
         <p className="mt-4">
           School workshops are arranged with the school. We do not collect a child’s contact details through this website.

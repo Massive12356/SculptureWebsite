@@ -5,8 +5,8 @@ export type ConsentChoice = {
   updatedAt: string;
 };
 
-const KEY = 'sculptor-studio-consent';
-const EVENT = 'sculptor-consent-change';
+const KEY = 'sculptmoore-consent';
+const EVENT = 'sculptmoore-consent-change';
 
 export function readConsent(): ConsentChoice | null {
   try {

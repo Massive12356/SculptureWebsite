@@ -7,10 +7,10 @@ const TermsPage = () => {
       <section>
         <h2>Using the site</h2>
         <p>
-          These terms cover your use of the Sculptor Studio website: the gallery, the journal, the inquiry form, and the pages that describe the practice. By using the site you agree to them. If you do not agree, please do not send a form or copy material from the pages.
+          These terms cover your use of the SCULPTMOORE website: the gallery, the journal, the inquiry form, and the pages that describe the practice. By using the site you agree to them. If you do not agree, please do not send a form or copy material from the pages.
         </p>
         <p className="mt-4">
-          The studio is at 123 Artisan Lane, Creative District, New York, NY 10001. Reach us at <a href="mailto:studio@sculptor.com">studio@sculptor.com</a>.
+          The studio is at 123 Artisan Lane, Creative District, New York, NY 10001. Reach us at <a href="mailto:studio@sculptmoore.com">studio@sculptmoore.com</a>.
         </p>
       </section>
 
@@ -41,7 +41,7 @@ const TermsPage = () => {
       <section>
         <h2>Studio visits</h2>
         <p>
-          Visits are by appointment, on the days stated on the contact page. Open Studio Saturdays, described on the <Link to="/csr">CSR page</Link>, are the exception: individuals may walk in without a booking. Please follow the maker’s direction around tools, dust, and works in progress. The studio may refuse or end a visit that puts people or work at risk.
+          Visits are by appointment, on the days stated on the contact page. Open Studio Saturdays are the exception: individuals may walk in without a booking. Please follow the maker’s direction around tools, dust, and works in progress. The studio may refuse or end a visit that puts people or work at risk.
         </p>
       </section>
 

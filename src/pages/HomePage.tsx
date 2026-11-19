@@ -23,8 +23,8 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="rounded-lg overflow-hidden shadow-xl">
             <img
-              src="https://images.pexels.com/photos/4100720/pexels-photo-4100720.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Elena Marlowe at the carving bench"
+              src="https://res.cloudinary.com/cmpwim01/image/upload/v1795085833/b9739bbe-e841-4e49-befd-e1d7f9616ff2.jpg"
+              alt="Diana Moore at the carving bench"
               className="w-full h-full object-cover"
             />
           </div>
@@ -34,7 +34,7 @@ const HomePage = () => {
               A working studio on Artisan Lane
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-4">
-              Sculptor Studio has made private and civic sculpture since 2004. Elena Marlowe still draws every commission. A team of carvers, a bronze fabricator, and an install crew carry the work from the bench to the site.
+              SCULPTMOORE has made private and civic sculpture since 2004. Diana Moore still draws every commission. James runs the studio calendar, Luca carves beside her, and Maya, the studio intern, helps carry each piece from the bench toward the site.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
               Collectors come for a single piece. Cities and campuses come for something that has to stand outside for decades. Both leave with a schedule, a fixed price, and a person to call.
@@ -43,8 +43,8 @@ const HomePage = () => {
               <Link to="/about" className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors">
                 Meet the studio
               </Link>
-              <Link to="/csr" className="border border-gray-300 text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors">
-                Our responsibility
+              <Link to="/contact" className="border border-gray-300 text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors">
+                Contact the studio
               </Link>
             </div>
           </div>
@@ -88,7 +88,7 @@ const HomePage = () => {
                     <img
                       src={sculpture.images[0]}
                       alt={sculpture.title}
-                      className="w-full h-64 object-cover"
+                      className="w-full h-auto block"
                     />
                   </div>
                   <div className="mt-4 text-center">
