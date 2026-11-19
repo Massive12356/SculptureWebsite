@@ -25,7 +25,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-gray-900">SCULPTMOORE</Link>
+            <Link to="/" className="inline-flex items-center" aria-label="SCULPTMOORE home">
+              <img
+                src="https://res.cloudinary.com/cmpwim01/image/upload/v1795098791/Sculptmoore_Golden_Sculptural_Emblem-removebg-preview.png"
+                alt="SCULPTMOORE"
+                className="h-10 w-auto sm:h-11"
+              />
+            </Link>
           </div>
 
           <div className="hidden lg:flex space-x-6 xl:space-x-8">

@@ -36,7 +36,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Studio Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-6 text-gray-100">SCULPTMOORE</h3>
+            <Link to="/" className="inline-flex items-center mb-6" aria-label="SCULPTMOORE home">
+              <img
+                src="https://res.cloudinary.com/cmpwim01/image/upload/v1795098791/Sculptmoore_Golden_Sculptural_Emblem-removebg-preview.png"
+                alt="SCULPTMOORE"
+                className="h-12 w-auto"
+              />
+            </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Creating timeless sculptures that capture the essence of beauty, emotion, and enduring artistry.
             </p>
